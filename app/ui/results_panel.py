@@ -1,0 +1,1 @@
+"""Analysis results display components."""
