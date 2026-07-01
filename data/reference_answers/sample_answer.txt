@@ -1,0 +1,3 @@
+Inheritance is an object-oriented programming concept that allows a child class to inherit the properties and methods of a parent class. 
+It promotes code reuse, establishes an "is-a" relationship between classes, and enables hierarchical classification. 
+A child class can also add new features or override inherited methods to provide specialized behavior.
