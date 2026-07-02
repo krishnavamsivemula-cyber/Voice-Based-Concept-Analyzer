@@ -5,9 +5,10 @@ import streamlit as st
 PROJECT_NAME = "Voice-Based Concept Understanding Analyzer (VBCUA)"
 
 PROJECT_OBJECTIVES = [
-    "Convert spoken answers into text using speech recognition.",
-    "Evaluate concept understanding through semantic similarity analysis.",
-    "Generate structured PDF reports for review and assessment.",
+    "Speech-to-text transcription",
+    "Semantic similarity analysis",
+    "Concept understanding scoring",
+    "Downloadable PDF reports",
 ]
 
 SUPPORTED_AUDIO_FORMATS = ["WAV", "MP3", "M4A"]
@@ -24,16 +25,27 @@ TECHNOLOGY_STACK = [
 
 def render_sidebar() -> None:
     """Render the application sidebar with project information."""
+
     with st.sidebar:
-        st.header(PROJECT_NAME)
 
-        st.subheader("Objectives")
-        for objective in PROJECT_OBJECTIVES:
-            st.markdown(f"- {objective}")
+        st.markdown("## 🎙️ VBCUA")
 
-        st.subheader("Supported Audio Formats")
-        st.markdown(", ".join(SUPPORTED_AUDIO_FORMATS))
+        st.caption("AI-powered Concept Understanding Analyzer")
 
-        st.subheader("Technology Stack")
-        for technology in TECHNOLOGY_STACK:
-            st.markdown(f"- {technology}")
+        st.divider()
+
+        with st.expander("🎯 Project Objectives", expanded=True):
+            for objective in PROJECT_OBJECTIVES:
+                st.markdown(f"• {objective}")
+
+        with st.expander("🎵 Supported Formats", expanded=True):
+            st.markdown(" • ".join(SUPPORTED_AUDIO_FORMATS))
+
+        with st.expander("🛠 Technology Stack", expanded=True):
+            for technology in TECHNOLOGY_STACK:
+                st.markdown(f"• {technology}")
+
+        st.divider()
+
+        st.caption("Version 1.0")
+        st.caption("Built with ❤️ using Python, Streamlit & AI")

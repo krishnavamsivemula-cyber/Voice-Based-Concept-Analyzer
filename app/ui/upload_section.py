@@ -13,20 +13,28 @@ def render_upload_section() -> UploadedFile | None:
     Returns:
         The uploaded file, or None if no file has been selected.
     """
-    st.subheader("Upload Audio")
-    st.markdown(
-        "Upload a recorded answer in **WAV**, **MP3**, or **M4A** format. "
-        "The file will be analyzed after processing is enabled."
+
+    st.subheader("📤 Upload Student Response")
+
+    st.caption(
+        "Upload a student's recorded explanation for AI-powered concept evaluation."
     )
 
-    uploaded_file = st.file_uploader(
-        "Choose an audio file",
-        type=SUPPORTED_EXTENSIONS,
-        help="Accepted formats: WAV, MP3, M4A",
-        key="audio_uploader",
-    )
+    with st.container(border=True):
 
-    if uploaded_file is not None:
-        st.info(f"Uploaded file: **{uploaded_file.name}**")
+        st.markdown(
+            "**Supported formats:** WAV • MP3 • M4A"
+        )
+
+        uploaded_file = st.file_uploader(
+            "Choose an audio file",
+            type=SUPPORTED_EXTENSIONS,
+            help="Accepted formats: WAV, MP3, M4A",
+            key="audio_uploader",
+            label_visibility="collapsed",
+        )
+
+        if uploaded_file is not None:
+            st.success(f"✅ Uploaded: **{uploaded_file.name}**")
 
     return uploaded_file

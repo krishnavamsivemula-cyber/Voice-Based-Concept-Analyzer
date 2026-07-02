@@ -38,12 +38,90 @@ def configure_page() -> None:
         page_icon=PAGE_ICON,
         layout="wide",
     )
+    st.markdown("""
+        <style>
+            section[data-testid="stSidebar"]{
+                width:280px !important;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+    
+def apply_custom_theme() -> None:
+    """Apply a modern corporate theme."""
+
+    st.markdown(
+        """
+        <style>
+
+        /* Main page */
+        .main {
+            background-color: #F7F9FC;
+        }
+
+        /* Sidebar */
+        section[data-testid="stSidebar"] {
+            background-color: #EEF4FB;
+        }
+
+        /* Headers */
+        h1 {
+            color: #0F172A;
+        }
+
+        h2, h3 {
+            color: #1E3A5F;
+        }
+
+        /* Metric cards */
+        div[data-testid="stMetric"] {
+            background: white;
+            border: 1px solid #D9E4F5;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Upload box */
+        div[data-testid="stFileUploader"] {
+            border: 2px dashed #2563EB;
+            border-radius: 14px;
+            background: #FFFFFF;
+        }
+
+        /* Alerts */
+        div[data-testid="stAlert"] {
+            border-radius: 12px;
+        }
+
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def render_header() -> None:
     """Render the main page heading and project description."""
-    st.title(PROJECT_HEADING)
-    st.markdown(PROJECT_DESCRIPTION)
+
+    st.title("🎙️ Voice-Based Concept Understanding Analyzer")
+
+    st.caption(
+        "AI-powered speech recognition and semantic analysis for evaluating "
+        "conceptual understanding."
+    )
+
+    st.markdown(
+        """
+        Upload a student's spoken explanation and let the application:
+
+        - 🎤 Convert speech into text using **OpenAI Whisper**
+        - 🧠 Compare the response with a reference answer
+        - 📊 Calculate a semantic similarity score
+        - 🏆 Generate a concept understanding grade
+        - 📄 Create a downloadable PDF assessment report
+        """
+    )
+
+    st.divider()
 
 
 def save_uploaded_audio(uploaded_file: UploadedFile) -> Path:
@@ -226,6 +304,8 @@ def handle_analysis(
 def main() -> None:
     """Run the Streamlit application."""
     configure_page()
+    # apply_custom_theme()
+
     render_sidebar()
     render_header()
 
