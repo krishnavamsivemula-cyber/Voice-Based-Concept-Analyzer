@@ -211,6 +211,14 @@ streamlit run app/main.py
 
 Watch the complete demonstration of the Voice Based Concept Analyzer below
 
+### 🌐 Live Application
+
+🔗 https://voice-based-concept-analyzer-7jqy5pm8sjxtz99upyn8mv.streamlit.app/
+
+### 📹 Project Demonstration Video
+
+🎥 [https://your-video-link](https://drive.google.com/file/d/1fbdX1F1b0d8v3cT5wwdTqTdBbwqb_NWm/view?usp=sharing)
+
 
 ---
 ## 👥 Contributors
