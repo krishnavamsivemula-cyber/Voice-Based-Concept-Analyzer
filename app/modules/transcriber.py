@@ -65,7 +65,7 @@ def transcribe_audio(audio_path: str) -> str:
         result = model.transcribe(str(path))
     except Exception as exc:
         raise TranscriptionError(
-            f"Failed to transcribe audio file '{audio_path}'."
+            f"Failed to transcribe audio file '{audio_path}':{exc}"
         ) from exc
 
     transcript = result.get("text", "")
