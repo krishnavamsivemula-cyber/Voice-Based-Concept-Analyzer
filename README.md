@@ -207,7 +207,12 @@ streamlit run app/main.py
 - Authentication and user management
 
 ---
+## Project Demonstration
 
+Watch the complete demonstration of the Voice Based Concept Analyzer below
+
+
+---
 ## 👥 Contributors
 
 This project was developed collaboratively as part of an AI-based educational application. Team members contributed to different aspects of the project, including application design, implementation, testing, and documentation.
